@@ -1207,23 +1207,39 @@
     </div>
 
     <!-- ==================== TAB 4: 전체 미션 진행 흐름 ==================== -->
-    <div id="tab-missions" class="tab-content">
+        <div id="tab-missions" class="tab-content">
       
       <div class="alert-card danger">
-        <div class="alert-title">⚠️ 사이드 미션 진행 철칙: 메인 전에 사이드부터 올클리어!</div>
+        <div class="alert-title">🚨 사이드 미션 진행 절대 철칙: 메인 전에 사이드부터 올클리어!</div>
         <p>
-          메인 미션을 진행하면 열려있던 사이드 미션이 영구 폐쇄되는 경우가 빈번합니다.<br>
+          슈퍼로봇대전 Y에서는 <b>메인 미션을 진행하면 열려있던 사이드 미션이 영구 소멸(Lost)</b>되는 경우가 빈번합니다.<br>
+          특히 <b class="hl-red">사이드 2-7 (메인 2-4 전)</b>, <b class="hl-red">사이드 2-14 (메인 2-5 전)</b>, <b class="hl-red">사이드 3-5B (메인 3-6 전)</b>은 주요 기체 및 샤아/사자비가 날아가는 치명적 소멸 구간입니다.<br>
           <b>새로운 메인 미션을 누르기 전에 나와 있는 모든 사이드/유산 미션을 먼저 완료하세요.</b>
         </p>
       </div>
 
-      <h2 class="section-title"><i>🗺️</i> 챕터별 미션 순서 및 소멸 경고 일람</h2>
+      <!-- 챕터 빠른 이동 필터 -->
+      <div class="filter-bar">
+        <span style="font-size:0.85rem; font-weight:700; color:var(--text-muted); margin-right:4px;">챕터 바로가기:</span>
+        <div class="filter-btn-group">
+          <button class="filter-btn active" onclick="filterChapter('all')">전체 보기</button>
+          <button class="filter-btn" onclick="filterChapter('ch1')">Ch.1 개막</button>
+          <button class="filter-btn" style="border-color:var(--accent-cyan); color:var(--accent-cyan);" onclick="filterChapter('ch2')">🔥 Ch.2 (현재)</button>
+          <button class="filter-btn" onclick="filterChapter('ch3')">Ch.3 마신&혜성</button>
+          <button class="filter-btn" onclick="filterChapter('ch4')">Ch.4 후속기각성</button>
+          <button class="filter-btn" onclick="filterChapter('ch5')">Ch.5 황제강림</button>
+          <button class="filter-btn" onclick="filterChapter('ch6')">Ch.6 숙적집결</button>
+          <button class="filter-btn" onclick="filterChapter('ch7')">Ch.7 영원의끝</button>
+        </div>
+      </div>
 
+      <!-- 요약 플로우차트 테이블 -->
+      <h2 class="section-title"><i>🗺️</i> 챕터별 핵심 미션 요약 플로우 & 소멸 경고</h2>
       <div class="table-container">
         <table>
           <thead>
             <tr>
-              <th width="100">챕터</th>
+              <th width="90">챕터</th>
               <th>미션 구분 & 명칭</th>
               <th>주요 획득 기체 / 보상</th>
               <th>소멸 시점 (진입 금지 데드라인)</th>
@@ -1236,63 +1252,61 @@
               <td>주인공 기체(룬드라헤), A.아드벤트, 겟타 아크, 다이내제논, 갓 건담</td>
               <td>소멸 미션 없음</td>
             </tr>
-
-            <tr style="background: rgba(0, 229, 255, 0.03);">
+            <tr style="background: rgba(0, 229, 255, 0.04);">
               <td rowspan="9"><b>Chapter 2</b><br><small class="hl-cyan">(현재 위치)</small></td>
               <td><b>메인 2-1 「의탁받은 용자들」</b></td>
               <td>라이딘(아키라), 그레이트 마징가(테츠야), 마리(어시스트)</td>
               <td>-</td>
             </tr>
-            <tr style="background: rgba(0, 229, 255, 0.03);">
+            <tr style="background: rgba(0, 229, 255, 0.04);">
               <td><b>전선 1 「남미 전선(쿠스코)」</b> <span class="badge badge-relic">무한 파밍</span></td>
-              <td>자유 경험치, 자금, 격추수(Score), MxP 무한 파밍 가능!</td>
+              <td>신 50기 격추수 작업의 성지! 경험치, 자금, MxP 무한 파밍.</td>
               <td>상시 개방</td>
             </tr>
-            <tr style="background: rgba(0, 229, 255, 0.03);">
+            <tr style="background: rgba(0, 229, 255, 0.04);">
               <td>사이드 2-2 「격돌! 새로운 건담 파이트!」</td>
               <td>건담 맥스터(치보데), 건담 로즈(죠르쥬)</td>
               <td>메인 3-4 진입 시 소멸</td>
             </tr>
-            <tr style="background: rgba(0, 229, 255, 0.03);">
+            <tr style="background: rgba(0, 229, 255, 0.04);">
               <td>사이드 2-3 「바로 곁에 있는 악의」</td>
               <td>홍련 특식(카렌), 노벨 건담(아렌비)</td>
-              <td>메인 2-5 진입 시 소멸</td>
-            </tr>
-            <tr style="background: rgba(0, 229, 255, 0.03);">
-              <td><b>사이드 2-7 「마제스틱 프린스 출격」</b></td>
-              <td>레드 5 등 래빗츠 5기 전원 합류</td>
-              <td><b class="hl-red">메인 2-4 진입 시 영구 소멸!</b></td>
-            </tr>
-            <tr style="background: rgba(0, 229, 255, 0.03);">
-              <td><b>메인 2-2 「표류하는 이방인」</b></td>
-              <td>단바인(쇼우), 엘가임(다바) (흑기사/네이 플래그)</td>
-              <td>-</td>
-            </tr>
-            <tr style="background: rgba(0, 229, 255, 0.03);">
-              <td>사이드 2-8 「성처녀들」 & 2-12 「유구의 바이스톤 웰」</td>
-              <td><b class="hl-cyan">빌바인, 그란 가란, 서바인(시온)</b> 조기 획득!</td>
-              <td>메인 4-1 진입 시 소멸</td>
-            </tr>
-            <tr style="background: rgba(0, 229, 255, 0.03);">
-              <td>사이드 2-14 「정의와 우정, 그 행방」</td>
-              <td>건담 샌드록 커스텀(카트르)</td>
               <td><b class="hl-red">메인 2-5 진입 시 영구 소멸!</b></td>
             </tr>
-            <tr style="background: rgba(0, 229, 255, 0.03);">
-              <td>사이드 2-15 「운명을 결정짓는 자」</td>
-              <td><b class="hl-gold">데스티니 건담(신) & 루나마리아</b> 조기 획득!</td>
+            <tr style="background: rgba(0, 229, 255, 0.04);">
+              <td><b>사이드 2-7 「마제스틱 프린스 출격」</b></td>
+              <td>레드 5 등 래빗츠 5기 전원 가입</td>
+              <td><b class="hl-red">메인 2-4 진입 시 영구 소멸!</b></td>
+            </tr>
+            <tr style="background: rgba(0, 229, 255, 0.04);">
+              <td><b>메인 2-2 「표류하는 이방인」</b></td>
+              <td>단바인(쇼우), 엘가임(다바) (흑기사/네이 격파 플래그)</td>
+              <td>-</td>
+            </tr>
+            <tr style="background: rgba(0, 229, 255, 0.04);">
+              <td>사이드 2-8 「성처녀들」 & 2-12 「유구의 바이스톤 웰」</td>
+              <td><b class="hl-cyan">빌바인, 그란 가란(시라), 서바인(시온)</b> 조기 획득!</td>
+              <td>메인 4-1 진입 시 소멸</td>
+            </tr>
+            <tr style="background: rgba(0, 229, 255, 0.04);">
+              <td>사이드 2-14 「정의와 우정, 그 행방」</td>
+              <td>건담 샌드록 커스텀(카트르) (아군 전체 기력/SP 서포터)</td>
+              <td><b class="hl-red">메인 2-5 진입 시 영구 소멸!</b></td>
+            </tr>
+            <tr style="background: rgba(0, 229, 255, 0.04);">
+              <td><b>사이드 2-15 「운명을 결정짓는 자」</b> (신 50기)</td>
+              <td><b class="hl-gold">데스티니 건담(신) & 임펄스(루나마리아)</b> 조기 획득!</td>
               <td>메인 5-1 진입 시 소멸</td>
             </tr>
-
             <tr>
               <td rowspan="5"><b>Chapter 3</b></td>
-              <td>사이드 3-5B <b>「붉은 혜성의 습격」</b> (아무로 40기)</td>
-              <td><b class="hl-red">사자비(샤아)</b>, 톨기스III, 토러스, 스트라이크 프리덤</td>
-              <td>메인 3-6 진입 시 소멸</td>
+              <td><b>사이드 3-5B 「붉은 혜성의 습격」</b> (아무로 40기)</td>
+              <td><b class="hl-red">사자비(샤아 아즈나블)</b>, 톨기스III, 토러스 조기 영입!</td>
+              <td><b class="hl-red">메인 3-6 진입 시 영구 소멸!</b></td>
             </tr>
             <tr>
               <td>메인 3-1 「노려진 왈큐레」 & 3-2 「눈과 얼음의 생일」</td>
-              <td>풀아머 백식 개, 야크트 도가, Z건담 파일럿 등 (올리비 설득)</td>
+              <td>마크로스 델타 소대, 엘란 격파 플래그, 올리비 설득 플래그</td>
               <td>-</td>
             </tr>
             <tr>
@@ -1302,89 +1316,85 @@
             </tr>
             <tr>
               <td>메인 3-4 「그들과 그녀의 선택」</td>
-              <td>에어리얼 어설트 해금 (구엘 영입 3단계)</td>
+              <td>에어리얼 어설트 팩 해금, 구엘 플래그 3단계 (샤디크 턴제한 격파)</td>
               <td>-</td>
             </tr>
             <tr>
-              <td>메인 3-5 「생과 사의 갈림길」</td>
-              <td>란슬롯 siN(스자쿠), 월황의 수이(를르슈 & C.C.), 드래곤 건담</td>
-              <td>-</td>
+              <td>사이드 3-8 「격돌! 신주쿠의 건담」</td>
+              <td>도몬 3턴 내 5기 격파 시 마스터 아시아 영입 플래그!</td>
+              <td>메인 3-6 진입 시 소멸</td>
             </tr>
-
             <tr>
               <td rowspan="4"><b>Chapter 4</b></td>
-              <td>메인 4-1 「스베트 강습」 & 4-2 「여섯 사람과 한 마리와 하나」</td>
-              <td>카이저 그리드나이트 합체 해금</td>
+              <td>사이드 4-1 「숲의 밤」 & 메인 4-1 「스베트 강습」</td>
+              <td>번 플래그(+1), 네이 플래그, 숨겨진 강화파츠 [오타키]</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>메인 4-2 「여섯 사람과 한 마리와 하나」</td>
+              <td>카이저 그리드나이트 합체기 해금</td>
               <td>-</td>
             </tr>
             <tr>
               <td>메인 4-3 「마녀의 소원」</td>
-              <td>에어리얼 개수형, <b class="hl-green">구엘 & 다릴바르데 정식 가입</b></td>
+              <td>건담 에어리얼 개수형, <b class="hl-green">구엘 & 다릴바르데 정식 가입</b></td>
               <td>-</td>
-            </tr>
-            <tr>
-              <td>메인 4-4 「결사의 끝에」</td>
-              <td>메사 전사(격추수 비례 환급), 하야테 탑승기 변경</td>
-              <td>스토리 이벤트</td>
             </tr>
             <tr>
               <td>메인 4-5C/F 「NINJA의 맹세 / 반역의 NINJA」</td>
-              <td>주인공 후속기 <b class="hl-cyan">Yz-룬드라헤 코게츠/카구야</b> 환승</td>
+              <td>주인공 후속기 <b class="hl-cyan">Yz-룬드라헤 코게츠/카구야</b> 각성 환승!</td>
               <td>-</td>
             </tr>
-
             <tr>
               <td rowspan="4"><b>Chapter 5</b></td>
-              <td>메인 5-1 「새겨진 생명」 & 5-2 「영원과 정의를 바라는 용」</td>
-              <td>알파 아질, 인피니트 저스티스(아스란), 이터널(라크스)</td>
+              <td>사이드 5-3 「다시 바이스톤 웰로」 & 5-5 「빛의 신전」</td>
+              <td>번/네이 최종 플래그, 숨겨진 강화파츠 [엑스트라 암즈 S]</td>
               <td>-</td>
             </tr>
             <tr>
-              <td>메인 5-3 「재생·증식·진화하는 악의」 & 5-4 「마를 넘는 힘」</td>
-              <td>마징황제 G(테츠야), 마징카이저 마징파워 해금</td>
+              <td>메인 5-2 「영원과 정의를 바라는 용」</td>
+              <td>인피니트 저스티스(아스란), 이터널(라크스) 정식 합류</td>
               <td>-</td>
             </tr>
             <tr>
-              <td>메인 5-5 「계속해서 도는 세계」</td>
-              <td>포메이션 제로 합체기, 리리나(어시스트) 영입 플래그</td>
+              <td>메인 5-3 & 5-4 「마를 넘는 힘」</td>
+              <td>마징황제 G(테츠야), 마징카이저 '마징파워' 각성</td>
               <td>-</td>
             </tr>
             <tr>
-              <td>메인 5-6C/F 「고독한 달이 비추는 길 / 빛나는 밤에 꽃피어」</td>
-              <td>주인공 최종기 해금, <b class="hl-gold">A / B 엔딩 최종 선택 분기</b></td>
+              <td>메인 5-6C/F 「고독한 달 / 빛나는 밤에 꽃피어」</td>
+              <td>주인공 최종기 각성, <b class="hl-gold">루트 A / B 엔딩 최종 선택 분기</b></td>
               <td>-</td>
             </tr>
-
             <tr>
               <td rowspan="3"><b>Chapter 6</b></td>
-              <td>사이드 6-4 ~ 6-7 (도전 과제 4연전)</td>
+              <td>사이드 6-4 ~ 6-7 (4대 시련 챌린지)</td>
               <td><b class="hl-purple">카를레움 & 그라발린</b> 아군 정식 영입!</td>
               <td>-</td>
             </tr>
             <tr>
               <td>메인 6-3 「움직이기 시작한 야망」</td>
-              <td>아슈라 템플(갸블레), <b class="hl-cyan">칼바리 템플(올리비)</b></td>
+              <td>아슈라 템플(갸블레), <b class="hl-cyan">칼바리 템플(올리비)</b> 정식 합류</td>
               <td>-</td>
             </tr>
             <tr>
               <td>메인 6-6 「끝없는 싸움으로」</td>
-              <td><b class="hl-gold">마스터 건담(마스터 아시아)</b> 아군 합류!</td>
+              <td><b class="hl-gold">마스터 건담(마스터 아시아)</b> 아군 정식 합류!</td>
               <td>-</td>
             </tr>
-
             <tr>
               <td rowspan="3"><b>Chapter 7</b></td>
-              <td>메인 7-3A/B (엔딩 분기별 진행)</td>
-              <td>젯 자가 100기 달성 시 <b class="hl-green">메이(어시스트)</b> 획득</td>
+              <td>메인 7-4 「생명의 형태」</td>
+              <td>카이저 그리드나이트로 가규라 격파 시 <b class="hl-purple">다이내제논 리라이브 4인</b> 생환!</td>
               <td>-</td>
             </tr>
             <tr>
-              <td>메인 7-4 & 7-5 「영원의 끝에」</td>
-              <td><b class="hl-purple">다이내제논 리라이브 4인, 갈라바(번), 오지(네이)</b> 최종 집결!</td>
+              <td>메인 7-5 「영원의 끝에」</td>
+              <td>시구르 베렌츠 격파 전 번/네이 격파 시 <b class="hl-cyan">갈라바(번)</b>, <b class="hl-gold">오지(네이)</b> 가입!</td>
               <td>-</td>
             </tr>
             <tr>
-              <td>메인 7-6 ~ 7-9 (엔딩 피날레)</td>
+              <td>메인 7-6 ~ 7-9 피날레</td>
               <td>레이코(어시스트), 최종 결전 및 엔딩 도달</td>
               <td>최종화 클리어</td>
             </tr>
@@ -1392,18 +1402,581 @@
         </table>
       </div>
 
+      <!-- 챕터별 정밀 스테이지 공략 상세 -->
+      <h2 class="section-title"><i>🔍</i> 챕터별 스테이지 상세 공략 & 숨겨진 플래그 가이드</h2>
+
+      <!-- CH 1 -->
+      <div class="chapter-block" data-chapter="ch1">
+        <div class="card" style="margin-bottom:16px; border-left: 4px solid var(--accent-cyan);">
+          <div class="card-header">
+            <div class="card-title">📘 Chapter 1: 운명의 개막 (지구·우주 합류)</div>
+            <span class="badge badge-early">메인 1-1 ~ 1-4</span>
+          </div>
+          <p>주인공과 초기 동료들의 기초 전력을 다지는 구간입니다. 소멸 미션은 없습니다.</p>
+          <div class="timeline" style="margin-top:12px;">
+            <div class="timeline-item">
+              <b>메인 1-1C/F ~ 1-3A/B (주인공 선택 루트)</b><br>
+              <span style="font-size:0.85rem; color:var(--text-muted);">주인공 기체(룬드라헤), A.아드벤트(모함), 겟타 아크(타쿠마), 다이내제논(요모기/가우마), 갓 건담(도몬) 순차 합류. 초반 자금과 경험치는 도몬과 타쿠마에게 집중 투자하세요.</span>
+            </div>
+            <div class="timeline-item">
+              <b>메인 1-4 「열리는 문」</b><br>
+              <span style="font-size:0.85rem; color:var(--text-muted);">지구 루트와 우주 루트 부대가 합류하며 챕터 1이 마무리되고 챕터 2로 직결됩니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CH 2 -->
+      <div class="chapter-block" data-chapter="ch2">
+        <div class="card" style="margin-bottom:16px; border-left: 4px solid var(--accent-gold); background: rgba(255, 209, 102, 0.04);">
+          <div class="card-header">
+            <div class="card-title">🔥 Chapter 2: 전란의 태동 & 조기 합류 대폭발 (현재 플레이어 위치!)</div>
+            <span class="badge badge-deadline">소멸 미션 3개 주의!</span>
+          </div>
+          <div class="alert-card danger" style="margin: 10px 0;">
+            <b>🚨 챕터 2 필수 행동 순서 (이 순서대로만 진행하세요!)</b><br>
+            1. <b>메인 2-1</b> 클리어 즉시 열리는 <b>「남미 전선(쿠스코)」</b>에서 신 아스카 <b>50기 격추</b> 달성!<br>
+            2. 메인 2-4를 누르기 전에 <b>사이드 2-7 「마제스틱 프린스 출격」</b> 반드시 먼저 클리어!<br>
+            3. 메인 2-5를 누르기 전에 <b>사이드 2-14 「정의와 우정, 그 행방」</b> 반드시 먼저 클리어!
+          </div>
+
+          <div class="timeline" style="margin-top:14px;">
+            <div class="timeline-item">
+              <b>메인 2-1 「의탁받은 용자들」</b><br>
+              <span style="font-size:0.85rem; color:var(--text-muted);">라이딘(아키라), 그레이트 마징가(테츠야) 합류. 0티어 서포터 <b>마리(어시스트 크루)</b> 획득. 클리어 시 남미 전선이 열립니다.</span>
+            </div>
+
+            <div class="timeline-item gold">
+              <b class="hl-gold">전선 1 「남미 전선(쿠스코)」 [무한 반복 파밍 개방]</b><br>
+              <span style="font-size:0.85rem;">★ 지금 즉시 플레이 가능! 포스 임펄스에 탑승한 <b>신 아스카를 출격시켜 50기 격추</b>를 채우세요. 사이버스타(마사키)의 사이플래시를 활용하면 2~3판 만에 신 50기 + 수십만 자금을 쓸어담습니다.</span>
+            </div>
+
+            <div class="timeline-item">
+              <b>사이드 2-1 「영혼의 날개」 & 2-2 「격돌! 새로운 건담 파이트!」</b><br>
+              <span style="font-size:0.85rem; color:var(--text-muted);">마징가 Z(코우지 초기), 건담 맥스터(치보데), 건담 로즈(죠르쥬) 합류. (사이드 2-2는 메인 3-4 진입 시 소멸)</span>
+            </div>
+
+            <div class="timeline-item danger">
+              <b class="hl-red">사이드 2-3 「바로 곁에 있는 악의」 & 사이드 2-4 「수성의 마녀」</b> [메인 2-5 전 필수]<br>
+              <span style="font-size:0.85rem;">홍련 특식(카렌), 노벨 건담(아렌비) 영입. 사이드 2-4에서는 <b class="hl-cyan">슬레타로 구엘과 1회 이상 직접 교전</b>하여 구엘 영입 1단계 플래그를 달성하세요!</span>
+            </div>
+
+            <div class="timeline-item danger">
+              <b class="hl-red">🚨 사이드 2-7 「마제스틱 프린스 출격」 [소멸 데드라인: 메인 2-4]</b><br>
+              <span style="font-size:0.85rem;"><b>메인 2-4를 누르면 영구 소멸!</b> 레드 5, 블루 1, 퍼플 2, 로즈 3, 골드 4 등 팀 래빗츠 5기 전원이 가입하는 필수 미션입니다. 반드시 지금 클리어하세요.</span>
+            </div>
+
+            <div class="timeline-item">
+              <b>메인 2-2 「표류하는 이방인」</b><br>
+              <span style="font-size:0.85rem;">단바인(쇼우), 엘가임(다바) 등장.<br>
+              ⚡ <b>흑기사 플래그:</b> 쇼우로 흑기사 전투(+1), 다바로 흑기사 전투(+1), 쇼우로 흑기사 격파(+2).<br>
+              ⚡ <b>네이 플래그:</b> 적 증원으로 나오는 네이를 <b class="hl-cyan">5턴 이내</b>에 신속 격파할 것!</span>
+            </div>
+
+            <div class="timeline-item gold">
+              <b class="hl-cyan">사이드 2-8 「성처녀들」 & 2-12 「유구의 바이스톤 웰」</b> (메인 4-1 전까지)<br>
+              <span style="font-size:0.85rem;">사이드 2-8에서 <b>빌바인 & 그란 가란(시라 라파나)</b>, 사이드 2-12에서 <b>서바인(시온 자바)</b> 조기 영입! 최상위 회피 딜러와 SP 공급 전함을 조기에 확보합니다.</span>
+            </div>
+
+            <div class="timeline-item">
+              <b>사이드 2-9 / 2-10 / 2-11 (우주세기 3인방 조기 합류)</b><br>
+              <span style="font-size:0.85rem; color:var(--text-muted);">사이드 2-9에서 <b>뉴건담(아무로)</b>, 2-10에서 <b>Z건담(카미유)</b>, 2-11에서 <b>백식(크와트로)</b> 조기 획득! (메인 3-5 전 소멸) 아무로의 격추수 40기 육성을 시작하세요.</span>
+            </div>
+
+            <div class="timeline-item danger">
+              <b class="hl-red">🚨 사이드 2-14 「정의와 우정, 그 행방」 [소멸 데드라인: 메인 2-5]</b><br>
+              <span style="font-size:0.85rem;"><b>메인 2-5를 누르면 영구 소멸!</b> <b>건담 샌드록 커스텀(카트르)</b> 획득. 카트르의 에이스 보너스(인접 아군 매 턴 기력+5, SP+5)는 본작 최고의 사기 서포터입니다. 절대 놓치지 마세요.</span>
+            </div>
+
+            <div class="timeline-item gold">
+              <b class="hl-gold">🎯 사이드 2-15 「운명을 결정짓는 자」 [데스티니 건담 조기 합류]</b><br>
+              <span style="font-size:0.85rem;">해금 조건: <b>신 아스카 격추수 50기 이상</b> 달성 시 해금 (소멸: 메인 5-1).<br>
+              클리어 시 <b>데스티니 건담(신)</b>과 <b>포스 임펄스 건담(루나마리아)</b> 정식 획득! 신의 에이스 보너스(기력 110 SEED 발동)로 초반 학살이 시작됩니다.</span>
+            </div>
+
+            <div class="timeline-item">
+              <b>메인 2-4 「결투의 마녀」</b><br>
+              <span style="font-size:0.85rem;">⚡ <b>구엘 플래그 2단계:</b> 슬레타(건담 에어리얼)로 <b class="hl-cyan">6턴 이내에 구엘(딜란자)을 격파</b>하세요. (사이드 2-7이 소멸하므로 사전에 꼭 클리어했는지 확인!)</span>
+            </div>
+
+            <div class="timeline-item">
+              <b>사이드 2-17 「마의 밤」</b><br>
+              <span style="font-size:0.85rem;">⚡ <b>번 바닝스 플래그:</b> 쇼우로 번을 격파(+1)하고 스테이지 클리어(+1). (갈라바 영입 포인트 누적)</span>
+            </div>
+
+            <div class="timeline-item">
+              <b>메인 2-5 「퍼져나가는 음모」 & 메인 2-6 「크로스 포인트」</b><br>
+              <span style="font-size:0.85rem;">메인 2-6에서 ⚡ <b>네이 플래그:</b> 다바(엘가임)로 네이를 <b class="hl-cyan">5턴 이내</b>에 격파하세요!</span>
+            </div>
+
+            <div class="timeline-item">
+              <b>메인 2-7 「새로운 여정」 (챕터 2 피날레)</b><br>
+              <span style="font-size:0.85rem; color:var(--text-muted);">챕터 2 보스전 클리어 시 <b>아프리카 전선(카이로)</b>과 <b>지구권 외연 전선</b>이 추가 개방됩니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CH 3 -->
+      <div class="chapter-block" data-chapter="ch3">
+        <div class="card" style="margin-bottom:16px; border-left: 4px solid var(--accent-red);">
+          <div class="card-header">
+            <div class="card-title">📕 Chapter 3: 붉은 혜성의 습격 & 마신의 각성</div>
+            <span class="badge badge-deadline">샤아 사자비 소멸 주의!</span>
+          </div>
+
+          <div class="timeline" style="margin-top:14px;">
+            <div class="timeline-item">
+              <b>메인 3-1 「노려진 왈큐레」 & 메인 3-2 「눈과 얼음의 생일」</b><br>
+              <span style="font-size:0.85rem;">마크로스 델타 소대 합류.<br>
+              ⚡ <b>엘란 플래그:</b> 슬레타로 <b class="hl-cyan">5턴 이내에 엘란(건담 파라디) 격파</b>.<br>
+              ⚡ <b>올리비 플래그 1단계 (매우 중요):</b> 갸블레의 HP를 50% 이하로 깎기 전에, <b>다바를 올리비에게 인접시켜 「설득」 커맨드</b>를 먼저 실행할 것!</span>
+            </div>
+
+            <div class="timeline-item danger">
+              <b class="hl-red">🚨 사이드 3-5B 「붉은 혜성의 습격」 [소멸 데드라인: 메인 3-6]</b><br>
+              <span style="font-size:0.85rem;">출현 조건: <b>아무로 레이 격추수 40기 이상</b> 달성 시 발생 (메인 3-6 진입 시 영구 소멸!).<br>
+              보상: <b class="hl-red">사자비(샤아 아즈나블)</b>, 톨기스III(젝스), 토러스(노인) 정식 조기 합류!</span>
+            </div>
+
+            <div class="timeline-item gold">
+              <b class="hl-gold">메인 3-3 「하늘의 마신, 땅의 마왕」</b><br>
+              <span style="font-size:0.85rem;"><b>마징카이저(카부토 코우지)</b> 정식 가입! 사야카, 쥰, 보스 보로트 합류. 초합금 장갑의 절대 탱커 획득.</span>
+            </div>
+
+            <div class="timeline-item">
+              <b>메인 3-4 「그들과 그녀의 선택」</b><br>
+              <span style="font-size:0.85rem;">에어리얼 어설트 팩 해금.<br>
+              ⚡ <b>구엘 플래그 3단계:</b> 3턴 이내 샤디크 & 사비나 격파 → 에어리얼 환승 후 슬레타로 4턴 이내 샤디크 격파!</span>
+            </div>
+
+            <div class="timeline-item gold">
+              <b class="hl-gold">사이드 3-8 「격돌! 신주쿠의 건담」 [마스터 아시아 플래그]</b><br>
+              <span style="font-size:0.85rem;">⚡ <b>동방불패 영입 1단계:</b> 도몬(갓 건담)으로 <b class="hl-cyan">3턴 이내에 적 5기 이상 단독 격파</b>! (메인 3-6 전 클리어 필수)</span>
+            </div>
+
+            <div class="timeline-item">
+              <b>메인 3-5 「생과 사의 갈림길」 & 메인 3-6 「명계의 문」</b><br>
+              <span style="font-size:0.85rem; color:var(--text-muted);">스자쿠(란슬롯 siN), 를르슈 & C.C.(월황의 수이), 사이사이시(드래곤 건담) 합류. 챕터 3 결전.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CH 4 -->
+      <div class="chapter-block" data-chapter="ch4">
+        <div class="card" style="margin-bottom:16px; border-left: 4px solid var(--accent-green);">
+          <div class="card-header">
+            <div class="card-title">📗 Chapter 4: 후속기 각성 & 마녀의 맹세</div>
+            <span class="badge badge-bonus">후속기 & 구엘 정식합류</span>
+          </div>
+
+          <div class="timeline" style="margin-top:14px;">
+            <div class="timeline-item">
+              <b>사이드 4-1 「숲의 밤」 & 메인 4-1 「스베트 강습」</b><br>
+              <span style="font-size:0.85rem;">⚡ 번 플래그(+1), 네이 플래그(4턴 내 다바로 격파).<br>
+              🎁 <b>숨겨진 강화파츠 [오타키]:</b> 사이드 4-1에서 보스 세이바스를 격파하기 전에 <b>맵 상의 모든 잡몹을 먼저 전멸</b>시킬 것!</span>
+            </div>
+
+            <div class="timeline-item gold">
+              <b class="hl-green">메인 4-3 「마녀의 소원」 [구엘 & 다릴바르데 정식 가입]</b><br>
+              <span style="font-size:0.85rem;">사이드 2-4, 메인 2-4, 메인 3-4 플래그를 달성했다면 <b>구엘 & 다릴바르데 정식 아군 가입</b>! 슬레타는 <b>건담 에어리얼 개수형</b>으로 환승 강화됩니다.</span>
+            </div>
+
+            <div class="timeline-item">
+              <b>메인 4-4 「결사의 끝에」</b><br>
+              <span style="font-size:0.85rem; color:var(--text-muted);">스토리 이벤트로 멧서 전사. (※ 멧서의 격추수만큼 파일럿 포인트가 환급되므로 안심하셔도 됩니다.) 하야테 기체 환승.</span>
+            </div>
+
+            <div class="timeline-item gold">
+              <b class="hl-cyan">메인 4-5C/F 「NINJA의 맹세 / 반역의 NINJA」 [주인공 후속기 각성!]</b><br>
+              <span style="font-size:0.85rem;">주인공 후속기 <b class="hl-cyan">Yz-룬드라헤 코게츠 / 카구야</b>로 각성 환승! 공격력과 무장 연출이 대폭 강화됩니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CH 5 -->
+      <div class="chapter-block" data-chapter="ch5">
+        <div class="card" style="margin-bottom:16px; border-left: 4px solid var(--accent-purple);">
+          <div class="card-header">
+            <div class="card-title">🟪 Chapter 5: 황제 강림 & 엔딩 루트 분기</div>
+            <span class="badge badge-secret">마징파워 & 루트분기</span>
+          </div>
+
+          <div class="timeline" style="margin-top:14px;">
+            <div class="timeline-item">
+              <b>사이드 5-5 「빛의 신전」</b><br>
+              <span style="font-size:0.85rem;">⚡ 네이 플래그: 다바 또는 렛시로 네이를 5턴 이내에 격파.<br>
+              🎁 <b>숨겨진 강화파츠 [엑스트라 암즈 S]:</b> 보스 시스티스를 격파하기 전에 <b>맵 상의 모든 적을 전멸</b>시킬 것!</span>
+            </div>
+
+            <div class="timeline-item">
+              <b>메인 5-2 「영원과 정의를 바라는 용」</b><br>
+              <span style="font-size:0.85rem; color:var(--text-muted);">인피니트 저스티스(아스란), 이터널(라크스 클라인) 정식 합류. 스트라이크 프리덤과의 합체기 해금.</span>
+            </div>
+
+            <div class="timeline-item gold">
+              <b class="hl-gold">메인 5-3 & 5-4 「마를 넘는 힘」 [황제 콤비 각성]</b><br>
+              <span style="font-size:0.85rem;"><b>마징황제 G(테츠야)</b> 정식 가입! 마징카이저의 <b>「마징파워」(공격력 1.2배)</b> 해금 및 최강 합체기 '파이널 카이저 블레이드' 사용 가능!</span>
+            </div>
+
+            <div class="timeline-item">
+              <b>메인 5-5 「계속해서 도는 세계」</b><br>
+              <span style="font-size:0.85rem;">⚡ <b>리리나(어시스트) 플래그:</b> 아군 증원이 도착하기 전에 <b>히이로(윙 건담 제로)로 적 5기 이상 선제 격파</b>할 것!</span>
+            </div>
+
+            <div class="timeline-item danger">
+              <b class="hl-red">⚖️ 메인 5-6C/F 「운명의 루트 분기 선택」</b><br>
+              <span style="font-size:0.85rem;">주인공 최종 무장 해금 직후, <b>루트 A (빛나는 밤에 꽃피어)</b> vs <b>루트 B (고독한 달이 비추는 길)</b> 엔딩 분기를 최종 결정합니다!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CH 6 -->
+      <div class="chapter-block" data-chapter="ch6">
+        <div class="card" style="margin-bottom:16px; border-left: 4px solid var(--accent-gold);">
+          <div class="card-header">
+            <div class="card-title">👑 Chapter 6: 동방불패 & 숙적들의 합류</div>
+            <span class="badge badge-bonus">마스터아시아 & 카를레움</span>
+          </div>
+
+          <div class="timeline" style="margin-top:14px;">
+            <div class="timeline-item gold">
+              <b class="hl-purple">사이드 6-4 ~ 6-7 (4대 시련 챌린지) [카를레움 & 그라발린]</b><br>
+              <span style="font-size:0.85rem;">시련 도전 과제 4연전을 모두 클리어하면 <b>카를레움 & 그라발린</b>이 아군 정식 기체로 합류합니다!</span>
+            </div>
+
+            <div class="timeline-item">
+              <b>메인 6-3 「움직이기 시작한 야망」</b><br>
+              <span style="font-size:0.85rem;">아슈라 템플(갸블레) 자동 합류.<br>
+              ⚡ <b>올리비 & 칼바리 템플 정식 합류:</b> 메인 3-2 설득 플래그를 거친 후, 다바로 올리비에게 「설득」 후 다바로 직접 격파! (다바 격추수 100기 이상 시 무조건 합류)</span>
+            </div>
+
+            <div class="timeline-item gold">
+              <b class="hl-gold">메인 6-6 「끝없는 싸움으로」 [마스터 건담 & 동방불패 정식 가입!]</b><br>
+              <span style="font-size:0.85rem;">신주쿠 플래그 달성 + <b>도몬 격추수 80기 이상</b> 달성 시 <b class="hl-gold">마스터 건담 & 마스터 아시아</b> 정식 합류! 갓 건담과의 석파천경권 합체기로 최종 보스까지 압살합니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CH 7 -->
+      <div class="chapter-block" data-chapter="ch7">
+        <div class="card" style="margin-bottom:16px; border-left: 4px solid var(--accent-cyan);">
+          <div class="card-header">
+            <div class="card-title">🌌 Chapter 7: 영원의 끝 & 대단원 (최종 결전)</div>
+            <span class="badge badge-secret">최종 히든 7기 총집결</span>
+          </div>
+
+          <div class="timeline" style="margin-top:14px;">
+            <div class="timeline-item">
+              <b>메인 7-3A/B:</b> 젯 자가 격추수 100기 달성 시 <b class="hl-green">메이(어시스트)</b> 해금.
+            </div>
+
+            <div class="timeline-item gold">
+              <b class="hl-purple">메인 7-4 「생명의 형태」 [다이내제논 리라이브 4인 생환]</b><br>
+              <span style="font-size:0.85rem;">가우마 & 그리드나이트 격추수 각 70기 이상 + <b>카이저 그리드나이트로 보스 가규라 격파</b> 시 <b>쥬가, 오니자, 무지나, 시즈무 4인</b> 전원 생환 정식 합류!</span>
+            </div>
+
+            <div class="timeline-item gold">
+              <b class="hl-gold">메인 7-5 「영원의 끝에」 [갈라바(번) & 오지(네이) 최종 합류]</b><br>
+              <span style="font-size:0.85rem;">보스 시구르 베렌츠 격파 전에:<br>
+              1) 쇼우로 번을 격파 ➡️ <b class="hl-cyan">갈라바 (번 바닝스)</b> 가입!<br>
+              2) 다바로 네이를 격파 ➡️ <b class="hl-gold">오지 (네이 모 한)</b> 가입!</span>
+            </div>
+
+            <div class="timeline-item">
+              <b>메인 7-6 ~ 7-9 피날레:</b> 레이코(어시스트) 합류, 최종 보스 격파, 대망의 감동 엔딩 도달!
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- ==================== TAB 5: 캐릭터 육성 & 어시스트 ==================== -->
     <div id="tab-growth" class="tab-content">
+
+      <!-- ==================== 1. STG 메모리 (MxP) 최적 마스터 가이드 ==================== -->
+      <div class="alert-card info">
+        <div class="alert-title">🎛️ STG 메모리 (MxP) 운용 & 최적 투자 가이드</div>
+        <p>
+          MxP는 미션 클리어, 유산 미션(5,000~10,000 MxP), 전선 무한 파밍에서 획득하는 특수 자원입니다.<br>
+          스노우볼 효과를 위해 <b>🟢 GREEN(경제/운용) 트리를 최우선 마스터</b>한 후, 🔴 RED(기력/화력) ➡️ 🔵 BLUE(SP/방어) 순으로 해금하세요!
+        </p>
+      </div>
+
+      <h2 class="section-title"><i>💎</i> STG 메모리 3대 트리 투자 로드맵</h2>
+      
+      <div class="grid-3" style="margin-bottom: 24px;">
+        
+        <!-- GREEN TREE -->
+        <div class="card" style="border-top: 4px solid var(--accent-green);">
+          <div class="card-header">
+            <div class="card-title" style="color:var(--accent-green);">🟢 GREEN 트리 (운용 & 경제)</div>
+            <span class="badge" style="background:var(--accent-green); color:#000;">최우선 1순위 올인</span>
+          </div>
+          <p><b>자금과 MxP를 복리로 불리는 경제의 핵심!</b></p>
+          <ul style="padding-left: 18px; margin-top: 10px; font-size: 0.88rem; line-height: 1.7;">
+            <li><b class="hl-green">1. 미션 클리어 MxP 증가 (Lv 1~3):</b><br>클리어당 +100 / +200 / +300 MxP 영구 추가. <b>챕터 2에서 가장 먼저 찍어야 남은 60여 개 미션 전체에서 수만 MxP를 공짜로 증식</b>시킵니다!</li>
+            <li><b class="hl-green">2. 기체/무기 개조비용 경감 (Lv 1~3):</b><br>개조비 -10% / -20% / -25% 영구 할인. 수십 기의 5단/10단 개조 시 수백만 크레딧을 절약합니다.</li>
+            <li><b class="hl-green">3. 적 격추 획득 자금 증가 (Lv 1~3):</b><br>적 격추 자금 +10% / +20% / +30% 증폭. 사이플래시 파밍과 결합 시 자금 폭풍 수급.</li>
+            <li><b class="hl-green">4. 어시스트 슬롯 & 사용 횟수 증가:</b><br>출격 시 어시스트 스톡 +1 / +2회. 로펫의 맵 전체 분석/교란, 레이코의 SP 20% 감소를 연속 발동.</li>
+            <li><b class="hl-gold">5. 미러 시스템 (A. 아드벤트 / 에치카):</b><br>에치카 기력 150 달성 시 <b>아군 전체에 「행운」(자금 2배) + 「노력」(경험치 2배)</b> 자동 시전! 최고의 파밍 패시브.</li>
+          </ul>
+        </div>
+
+        <!-- RED TREE -->
+        <div class="card" style="border-top: 4px solid var(--accent-red);">
+          <div class="card-header">
+            <div class="card-title" style="color:var(--accent-red);">🔴 RED 트리 (공격 & 기력)</div>
+            <span class="badge" style="background:var(--accent-red); color:#fff;">2순위 투자</span>
+          </div>
+          <p><b>초반 빠른 특수능력 발동과 화력 증폭!</b></p>
+          <ul style="padding-left: 18px; margin-top: 10px; font-size: 0.88rem; line-height: 1.7;">
+            <li><b class="hl-red">1. 턴 개시 기력 상승 (Lv 1~2):</b><br>매 턴 아군 전원 기력 +1 / +2 자동 상승. 신의 SEED(110), 히이로의 제로시스템(110), 코우지의 마징파워(125~130), 도몬의 명경지수(130)를 1~2턴 만에 발동!</li>
+            <li><b class="hl-red">2. 작전시간 연장 (아드벤트 인접 EN 회복):</b><br>A.아드벤트 주위 3칸 이내 아군 매 턴 EN 10% 자동 회복. 대형 보스전 연비 문제 완전 해결.</li>
+            <li><b class="hl-red">3. 최종 대미지 & 크리티컬 증가:</b><br>아군 전체 기본 공격력 +100~200 및 크리티컬률 +10% 상시 보정.</li>
+            <li><b class="hl-red">4. 사거리 & 이동 후 공격 강화:</b><br>격투/사격 무기 사거리 연장으로 선제 공격력 향상.</li>
+          </ul>
+        </div>
+
+        <!-- BLUE TREE -->
+        <div class="card" style="border-top: 4px solid var(--accent-cyan);">
+          <div class="card-header">
+            <div class="card-title" style="color:var(--accent-cyan);">🔵 BLUE 트리 (방어 & 유틸)</div>
+            <span class="badge" style="background:var(--accent-cyan); color:#000;">3순위 보완</span>
+          </div>
+          <p><b>정신기 난사와 극한의 생존력 보장!</b></p>
+          <ul style="padding-left: 18px; margin-top: 10px; font-size: 0.88rem; line-height: 1.7;">
+            <li><b class="hl-cyan">1. 턴 개시 SP 회복 (Lv 1~2):</b><br>매 턴 아군 전원 SP +3 / +5 자동 회복. 장기전 시 번뜩임/불굴/열혈 지속 공급.</li>
+            <li><b class="hl-cyan">2. 운동성 & 조준값 보정:</b><br>리얼계 파일럿들의 피격률 0%, 보스 상대 명중률 100% 보장.</li>
+            <li><b class="hl-cyan">3. 배리어 EN 소비 경감 & 장갑 증가:</b><br>마징카이저, 그레이트 마징가, 라이딘 피격 대미지 10자리 고정.</li>
+            <li><b class="hl-cyan">4. 최대 HP / EN 확장:</b><br>전 함선 및 기체 기본 스펙 업그레이드.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- ==================== 2. 전함 및 광역/아군 전체 버프 에이스 보너스 ==================== -->
+      <h2 class="section-title"><i>🚢</i> 전함 및 광역 / 아군 전체 버프 에이스 보너스 특집</h2>
+      <div class="alert-card" style="margin-bottom: 14px;">
+        <b>💡 격추수 60기 달성 최우선 대상!</b><br>
+        자신뿐만 아니라 <b>주변 아군이나 함대 전체의 기력, SP, 대미지를 뻥튀기해주는 필수 에이스</b>들입니다. 전선 미션에서 빠르게 60기를 만들어 두세요.
+      </div>
+
+      <div class="table-container" style="margin-bottom: 24px;">
+        <table>
+          <thead>
+            <tr>
+              <th width="150">파일럿 (기체/전함)</th>
+              <th width="260">에이스 보너스 핵심 효과</th>
+              <th>실전 운용 및 시너지 팁</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background: rgba(255, 209, 102, 0.05);">
+              <td><b>브라이트 노아</b><br><small class="hl-cyan">라 카이람 (전함)</small></td>
+              <td><b class="hl-gold">지휘관 범위 내 아군, 턴 개시 시 기력 +5!</b><br>(추가: 지휘 범위 +1칸)</td>
+              <td><b>전 함대 최고의 기력 부스터.</b> 1턴에 전함 주위에 아군 4~6기를 모아두면 2턴 만에 전원 기력 130~150에 도달하여 마징파워/SEED가 즉시 켜집니다.</td>
+            </tr>
+            <tr style="background: rgba(0, 229, 255, 0.05);">
+              <td><b>시라 라파나</b><br><small class="hl-cyan">그란 가란 (전함)</small></td>
+              <td><b class="hl-cyan">주위 4칸 이내 아군, 턴 개시 시 SP +5 회복!</b></td>
+              <td><b>이동형 무한 SP 충전 배터리.</b> 주위에 배치된 기체들은 매 턴 가속, 불굴, 직격을 쿨타임 없이 난사할 수 있습니다.</td>
+            </tr>
+            <tr style="background: rgba(239, 71, 111, 0.05);">
+              <td><b>라크스 클라인</b><br><small class="hl-cyan">이터널 (전함)</small></td>
+              <td><b class="hl-red">인접한 아군이 적에게 주는 최종 대미지 +10%!</b></td>
+              <td><b>보스 극딜 0티어 토템.</b> 도몬(석파천경권)이나 코우지(파이널 카이저 블레이드) 옆에 이터널을 붙여두면 보스 HP를 수만 단위로 추가 증발시킵니다.</td>
+            </tr>
+            <tr style="background: rgba(6, 214, 160, 0.05);">
+              <td><b>카트르 R. 위너</b><br><small class="hl-cyan">건담 샌드록 커스텀</small></td>
+              <td><b class="hl-green">인접한 아군, 턴 개시 시 기력 +5 & SP +5 동시 회복!</b></td>
+              <td><b>단일 기체 중 최강의 서포터.</b> 주력 에이스 기체 옆에 붙여서 진군하는 것만으로 기력과 SP를 매 턴 공짜로 채워줍니다. (메인 2-5 전 필수 영입!)</td>
+            </tr>
+            <tr>
+              <td><b>스즈카제 린</b><br><small class="hl-cyan">고디니온 (전함)</small></td>
+              <td><b>출격 시 최대 SP 20% 가산 시작</b><br>정신기 「신뢰」 소비 SP 20으로 경감</td>
+              <td>전투 개시 직후부터 아군 전체의 HP를 저비용으로 무한 수리하는 힐러 모함.</td>
+            </tr>
+            <tr>
+              <td><b>히타치 이즈루</b><br><small class="hl-cyan">레드 5</small></td>
+              <td><b>출격 시 팀 래빗츠 전원 하모닉 레벨 +10</b><br>(이즈루 본인은 +25)</td>
+              <td>MJP 래빗츠 팀 전원의 크리티컬률, 회피율, 쥬리아 시스템 스펙을 개막 즉시 극한으로 끌어올립니다.</td>
+            </tr>
+            <tr>
+              <td><b>아라드 묄더스</b><br><small class="hl-cyan">지크프리드 (VF-31S)</small></td>
+              <td><b>주위 4칸 이내 델타 소대원 최종 명중/회피 +10%</b><br>(하야테, 미라쥬, 멧서, 척 적용)</td>
+              <td>마크로스 델타 기체들을 편대 비행시키면 적탄을 100% 회피하는 불패 소대를 구축합니다.</td>
+            </tr>
+            <tr>
+              <td><b>에치카</b><br><small class="hl-cyan">A. 아드벤트 (모함)</small></td>
+              <td><b>출격 시 어시스트 링크 사용 가능 횟수 +2</b></td>
+              <td>로펫(분석/교란), 레이코(SP 소모 20% 감소)를 한 스테이지에서 여러 번 발동 가능하게 해줍니다.</td>
+            </tr>
+            <tr>
+              <td><b>를르슈 란페르지</b><br><small class="hl-cyan">월황의 수이</small></td>
+              <td><b>특수스킬 「전술지휘」 범위 +1, 효과 1.2배</b></td>
+              <td>공격/방어/특공 지휘를 걸어 지정 범위 아군들의 화력과 명중을 대폭 증폭시킵니다.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ==================== 3. 전투 주력 파일럿 에이스 보너스 ==================== -->
+      <h2 class="section-title"><i>⚔️</i> 전투 주력 파일럿 핵심 에이스 보너스</h2>
+      <div class="table-container" style="margin-bottom: 24px;">
+        <table>
+          <thead>
+            <tr>
+              <th width="150">파일럿 (기체)</th>
+              <th width="240">에이스 보너스 효과</th>
+              <th>평가 및 실전 효과</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background: rgba(255, 209, 102, 0.05);">
+              <td><b>신 아스카</b><br><small class="hl-cyan">데스티니 건담</small></td>
+              <td><b class="hl-gold">기력 110에서 특수능력 [SEED] 발동!</b></td>
+              <td><b>1티어 에이스.</b> 통상 기력 130 필요 능력이 110에서 켜져 출격 1턴 만에 풀스펙 개방.</td>
+            </tr>
+            <tr style="background: rgba(0, 229, 255, 0.05);">
+              <td><b>마사키 안도</b><br><small class="hl-cyan">사이버스타</small></td>
+              <td><b class="hl-cyan">출격 시 초기 SP +30, 초기 기력 +10</b></td>
+              <td><b>파밍의 제왕.</b> 1턴 시작하자마자 '열혈' + '행운' 걸고 적진에 사이플래시 난사 가능.</td>
+            </tr>
+            <tr>
+              <td><b>도몬 캇슈</b><br><small class="hl-cyan">갓 건담</small></td>
+              <td>기력 130 이상 격투 대미지 1.1배, 출격 시 기력 +10</td>
+              <td>명경지수와 중첩되어 보스 결전 무기 화력이 극대화됩니다.</td>
+            </tr>
+            <tr>
+              <td><b>히이로 유이</b><br><small class="hl-cyan">윙 건담 제로</small></td>
+              <td>기력 110에서 [제로 시스템] 발동, 기력 130 이상 대미지 +10%</td>
+              <td>1턴부터 제로 시스템의 능력치 폭증 보너스를 받고 맵병기를 난사합니다.</td>
+            </tr>
+            <tr>
+              <td><b>카부토 코우지</b><br><small class="hl-cyan">마징카이저</small></td>
+              <td>기력 130 이상 피격 대미지 -20%, 주는 대미지 1.1배</td>
+              <td>마징파워와 합쳐져 적 공격은 10자리로 막고 보스는 한 방에 분쇄합니다.</td>
+            </tr>
+            <tr>
+              <td><b>시온 자바</b><br><small class="hl-cyan">서바인</small></td>
+              <td>오라력 레벨에 따라 공격력 최대 +15%, 최종 회피율 +20%</td>
+              <td>적 보스의 명중률조차 0%로 만들며 오라 소드로 카운터를 날립니다.</td>
+            </tr>
+            <tr>
+              <td><b>아무로 레이</b><br><small class="hl-cyan">뉴 건담</small></td>
+              <td>뉴타입 레벨에 따라 사격 무기 공격력 +200, 명중/회피 +15%</td>
+              <td>핀 판넬과 메가 바주카 런처 사거리가 확대되며 원거리 저격수로 군림.</td>
+            </tr>
+            <tr>
+              <td><b>샤아 아즈나블</b><br><small class="hl-cyan">사자비</small></td>
+              <td>반격 시 주는 대미지 +20%, 크리티컬률 +20%</td>
+              <td>적 턴에 적진 한가운데 던져두면 반격만으로 전장을 초토화합니다.</td>
+            </tr>
+            <tr>
+              <td><b>슬레타 머큐리</b><br><small class="hl-cyan">건담 에어리얼</small></td>
+              <td>GUND-Format 중 명중/회피 +15%, 비트 공격력 +200</td>
+              <td>에어리얼 개수형 환승 후 올레인지 비트 무기의 연비와 화력이 대폭 강화됩니다.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ==================== 4. 주요 기체 5단 풀개조(커스텀) 보너스 ==================== -->
+      <h2 class="section-title"><i>🛠️</i> 주요 기체 5단 풀개조(커스텀) 보너스 완벽 정리</h2>
+      <div class="alert-card info" style="margin-bottom: 14px;">
+        <b>💡 5단 풀개조 보너스 획득 요령:</b><br>
+        기체의 HP, EN, 장갑, 운동성, 조준값을 모두 5단계까지 개조하면 고유 커스텀 보너스가 자동 개방됩니다.<br>
+        STG 메모리 GREEN 트리의 <b>[개조비용 경감 -25%]</b>를 먼저 찍고 개조해야 수백만 크레딧을 절약할 수 있습니다!
+      </div>
+
+      <div class="table-container" style="margin-bottom: 24px;">
+        <table>
+          <thead>
+            <tr>
+              <th width="150">기체명</th>
+              <th width="260">5단 풀개조(커스텀) 보너스</th>
+              <th>해설 및 추천 이유</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background: rgba(0, 229, 255, 0.05);">
+              <td><b>사이버스타</b></td>
+              <td><b class="hl-cyan">사이플래시 공격력 +300, 사거리 +1, 잔탄 +1 (또는 EN -10)</b></td>
+              <td><b>최우선 5단 개조 대상!</b> 사이플래시의 범위와 파괴력이 증가해 전선 파밍 속도가 2배 빨라집니다.</td>
+            </tr>
+            <tr style="background: rgba(255, 209, 102, 0.05);">
+              <td><b>데스티니 건담</b></td>
+              <td><b class="hl-gold">모든 무기 공격력 +200, '빛의 날개' +300 & [배리어 관통]</b></td>
+              <td>보스의 까다로운 왜곡 필드나 라미네이트 장갑을 무시하고 풀대미지를 꽂아 넣습니다.</td>
+            </tr>
+            <tr>
+              <td><b>뱅레이 / 뱅넥스 / 그란뱅</b></td>
+              <td>모든 무기 공격력 +200, 이동력 +1, 사거리 +1</td>
+              <td>나인의 서브 정신기와 함께 기동성과 사거리 사각지대가 완전히 사라집니다.</td>
+            </tr>
+            <tr>
+              <td><b>갓 건담</b></td>
+              <td>최대 EN +50, 이동력 +1, [명경지수] 능력치 상승치 +10 추가</td>
+              <td>근접 돌격 속도가 비약적으로 상승하며 기술 연비가 쾌적해집니다.</td>
+            </tr>
+            <tr>
+              <td><b>윙 건담 제로</b></td>
+              <td>[제로 시스템] 스탯 보정 강화 (+15), 트윈버스터라이플 EN -20</td>
+              <td>맵병기 난사 연비가 극적으로 개선되어 매 턴 광역 정리가 가능합니다.</td>
+            </tr>
+            <tr>
+              <td><b>마징카이저</b></td>
+              <td>장갑 +300, 최대 EN +50, [마징파워] 발동 기력 125로 완화</td>
+              <td>125 기력 달성 즉시 마징파워(1.2배 대미지)가 켜져 학살 모드로 전환됩니다.</td>
+            </tr>
+            <tr>
+              <td><b>서바인</b></td>
+              <td>모든 무기 공격력 +300, 이동력 +1, 오라력 Lv 7 이상 시 조준값 +20</td>
+              <td>높은 운동성에 조준값까지 보정되어 회피와 명중 양면에서 무결점 기체가 됩니다.</td>
+            </tr>
+            <tr>
+              <td><b>엘가임 Mk-II</b></td>
+              <td>버스터 런처 공격력 +300, 사거리 +1, 기력 130 이상 시 운동성/조준값 +25</td>
+              <td>직선형 맵병기 버스터 런처의 사거리와 위력이 비약적으로 상승합니다.</td>
+            </tr>
+            <tr>
+              <td><b>용자 라이딘</b></td>
+              <td>'갓 버드' 사거리 +2, 크리티컬률 +20%, [사이즈 보정 무시] 부여</td>
+              <td>대형 2L 보스를 상대로도 대미지 감소 없이 갓 버드 일격을 꽂아 넣습니다.</td>
+            </tr>
+            <tr>
+              <td><b>라 카이람 (전함)</b></td>
+              <td>최대 EN +60, 메가 입자포 사거리 +1, 공격력 +300</td>
+              <td>브라이트의 에이스 보너스(기력 +5)와 함께 전함 자체의 장거리 포격 화력이 증강됩니다.</td>
+            </tr>
+            <tr>
+              <td><b>그란 가란 (전함)</b></td>
+              <td>이동력 +1, 장갑 +400, '오라 발칸'에 이동 후 사용(P) 속성 부여</td>
+              <td>전함이 아군 전진 속도에 맞춰 기동하며 아군에게 지속적으로 SP를 공급할 수 있습니다.</td>
+            </tr>
+            <tr>
+              <td><b>이터널 (전함)</b></td>
+              <td>최대 HP +1000, 최대 EN +50, 수리/보급 장치 사거리 +1</td>
+              <td>라크스의 딜 버프(+10%)를 걸어주러 다니면서 원거리 수리와 보급을 동시에 수행합니다.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ==================== 5. 기존 사기 기체 TOP 6 및 어시스트 ==================== -->
+      <h2 class="section-title"><i>🏆</i> 1티어 추천 사기 기체 TOP 6 & 어시스트 크루</h2>
       
       <div class="grid-3">
-        
         <!-- 사기 기체 TOP 1: 사이버스타 -->
         <div class="card">
           <div class="card-header">
             <div class="card-title">🌪️ 사이버스타 (마사키)</div>
-            <span class="badge badge-early">초회특전 / S랭크</span>
+            <span class="badge badge-early">초회특전 / 0티어</span>
           </div>
           <p><b>역대급 맵병기 킬러 & 자금 수급의 제왕</b></p>
           <ul style="padding-left: 18px; margin-top: 8px; font-size: 0.88rem;">
@@ -1482,9 +2055,9 @@
             <li><b>콤비:</b> 마징황제 G(테츠야)와의 황제 콤비 합체기로 최종 보스까지 압살.</li>
           </ul>
         </div>
-
       </div>
 
+      <!-- 어시스트 링크 시스템 -->
       <h2 class="section-title"><i>🎛️</i> 신규 시스템 「어시스트 링크」 세팅법</h2>
 
       <div class="card" style="margin-bottom: 20px;">
@@ -1519,7 +2092,6 @@
 
     </div>
 
-    <!-- ==================== TAB 6: 유산 & 전선 파밍 미션 ==================== -->
     <div id="tab-relics" class="tab-content">
       
       <div class="alert-card info">
@@ -1739,6 +2311,21 @@
         }
       });
     }
+      // Chapter Filter in Tab-Missions
+    function filterChapter(chap) {
+      document.querySelectorAll('#tab-missions .filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const blocks = document.querySelectorAll('.chapter-block');
+      blocks.forEach(b => {
+        if (chap === 'all' || b.dataset.chapter === chap) {
+          b.style.display = 'block';
+        } else {
+          b.style.display = 'none';
+        }
+      });
+    }
+
   </script>
 </body>
 </html>
